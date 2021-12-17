@@ -62,7 +62,7 @@ app.post("/log", async function (req, res, next) {
   const { message } = req.body;
 
   try {
-    const logs = await LogService.addUser(message);
+    const logs = await LogService.addLog(message);
     res.json(logs);
   } catch (e) {
     next(e);

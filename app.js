@@ -38,8 +38,8 @@ app.get("/users", async function (req, res, next) {
   }
 });
 
-app.get("/addUser", async function (req, res, next) {
-  const { walletId, twitter } = req.query;
+app.post("/user", async function (req, res, next) {
+  const { walletId, twitter } = req.body;
 
   try {
     const books = await UserService.addUser(walletId, twitter);
@@ -58,8 +58,8 @@ app.get("/logs", async function (req, res, next) {
   }
 });
 
-app.get("/addLog", async function (req, res, next) {
-  const { message } = req.query;
+app.post("/log", async function (req, res, next) {
+  const { message } = req.body;
 
   try {
     const logs = await LogService.addUser(message);

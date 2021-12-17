@@ -42,8 +42,8 @@ app.post("/user", async function (req, res, next) {
   const { walletId, twitter } = req.body;
 
   try {
-    const books = await UserService.addUser(walletId, twitter);
-    res.json(books);
+    const user = await UserService.addUser(walletId, twitter);
+    res.json(user);
   } catch (e) {
     next(e);
   }
